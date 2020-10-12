@@ -2,7 +2,35 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+
+# Set up a dict
+# store results in an array
+# set separate arrays
+# Loop through first array to see what's in the dict
+# Loop through "second array" (the rest) and see if the value is already in the dict
+# Loop thru dict, if the keys are equal to the length of the arrays (occur repeatedly) append that key
+
+
+
+
+    match_num = len(arrays)
+    my_dict = {}
+    result = []
+
+    first_array = arrays[0]
+    rest_arrays = arrays[1:]
+
+    for x in first_array:
+        my_dict[x] = 1
+
+    for arr in rest_arrays:
+        for x in arr:
+            if my_dict.get(x):
+                my_dict[x] += 1
+
+    for key in my_dict:
+        if my_dict[key] == match_num:
+            result.append(key)
 
     return result
 
